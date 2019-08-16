@@ -1,0 +1,102 @@
+---
+title: "R Programming Week2"
+output:
+  html_document:
+    df_print: paged
+---
+
+## If Conditional
+x <- 2
+```{r echo=FALSE}
+x <- 2
+```
+
+```{r if-conditional}
+if(x > 3) {
+  y <- 10
+} else {
+  y <- 0
+}
+y
+y <- if(x > 3) {
+  10
+} else {
+  0
+}
+y
+x
+```
+
+## For loops
+
+```{r echo=TRUE}
+### Basic
+for(i in 1:10) {
+  print(i)
+}
+```
+
+### Using a character vector defined as
+x <- c("a", "b", "c", "d")
+
+```{r echo=FALSE}
+x <- c("a", "b", "c", "d")
+```
+
+
+```{r for-loops}
+### Option 1
+for(i in 1:4) {
+  print(x[i])
+}
+
+### Option 2
+for(i in seq_along(x)) {
+  print(x[i])
+}
+
+### Option 3
+for(letter in x) {
+  print(letter)
+}
+
+### Option 4
+for(i in 1:4) print(x[i])
+```
+
+```
+
+## While Loops
+```{r while-loop-1}
+### While 1 - Single Condition
+count <- 0
+while(count < 10) {
+  print(count)
+  count <- count +1
+}
+
+### While 2 - Multiple Conditions
+z <- 5
+
+while(z >= 3 && z <=10) {
+  print(z)
+  coin <- rbinom(1, 1, 0.5)
+  
+  if(coin == 1){
+    z <- z + 1
+  } else {
+    z <- z - 1
+  }
+}
+```
+
+
+
+
+
+
+<!-- Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*. -->
+
+<!-- When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file). -->
+
+<!-- The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed. -->
