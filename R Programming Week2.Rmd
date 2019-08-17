@@ -1,5 +1,5 @@
 ---
-title: "R Programming Week2"
+title: "Coursera Data Science - Week 2 - R Programming"
 output:
   html_document:
     df_print: paged
@@ -12,12 +12,14 @@ x <- 2
 ```
 
 ```{r if-conditional}
+### Syntax 1
 if(x > 3) {
   y <- 10
 } else {
   y <- 0
 }
 y
+### Syntax 2
 y <- if(x > 3) {
   10
 } else {
@@ -90,7 +92,21 @@ while(z >= 3 && z <=10) {
 }
 ```
 
+## Repeat
+```{r repeat}
+x0 <- 1
+tolerance <- 1e-8
 
+repeat {
+  x1 <- computeEstimate()
+  
+  if(abs(x1 - x0) < tolerance) {
+    break
+  } else {
+    x0 <- x1
+  }
+}
+```
 
 
 
