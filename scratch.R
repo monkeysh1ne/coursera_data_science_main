@@ -1,15 +1,18 @@
 
 # test creating character vector of filenames from ids.
-id <- 1 # dummy id numeric vector
+id <- as.numeric()
+id <- 2:100 # dummy id numeric vector
+csv_file_num <- character(length = length(id))
 
 ###  PASS ###
-for(i in id) {
-        if(i < 10) {
-                id[i] <- paste("00", i, sep = "")
-        } else if (i >=10 && i <= 99) {
-                id[i] <- paste("0", i, sep = "")
+for(i in 1:length(id)) { #from 1st to nth element in vector
+        print(id[i])
+        if(id[i] < 10) {
+                csv_file_num[i] <- paste("00", id[i], sep = "")
+        } else if (id[i] >=10 && id[i] <= 99) {
+                csv_file_num[i] <- paste("0", id[i], sep = "")
         } else {
-                id[i] <- paste(i, sep = "")
+                csv_file_num[i] <- paste(id[i], sep = "")
         }
 }
 ### PASS ###
@@ -17,7 +20,7 @@ for(i in id) {
 
 # test creating full filename including path from 'directory' and 'id'.
 directory <- "specdata"
-i = 0
 for(i in id) {
         csv_files <- paste(directory, "/", id, ".csv", sep = "")
 }
+
